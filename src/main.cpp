@@ -1,4 +1,3 @@
-
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -392,12 +391,30 @@ void print(const ScanResult& result) {
               );
 }
 
-int main() {
+int main(int argc, char* argv[]) {
     std::error_code ec;
-    const auto root = fs::current_path(ec);
+
+    const fs::path requested =
+        argc > 1 ? fs::path{argv[1]} : fs::current_path(ec);
 
     if (ec) {
         std::cerr << std::format("Cannot get current path: {}\n", ec.message());
+        return 1;
+    }
+
+    const fs::path root = fs::canonical(requested, ec);
+
+    if (ec) {
+        std::cerr << std::format(
+            "Cannot open '{}': {}\n",
+            requested.string(),
+            ec.message()
+        );
+        return 1;
+    }
+
+    if (!fs::is_directory(root, ec)) {
+        std::cerr << std::format("'{}' is not a directory\n", root.string());
         return 1;
     }
 

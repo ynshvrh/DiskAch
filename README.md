@@ -1,4 +1,3 @@
-
 # DiskAch
 
 A simple disk usage analyzer for Linux, written in C++20.
@@ -8,16 +7,17 @@ DiskAch recursively scans directories and displays their contents as a tree, inc
 ## Features
 
 - Recursive directory scanning
+- Scanning the current directory or any path passed as an argument
 - Directory and file size calculation
 - Tree-style output
 - Relative size visualization
 - Basic scan statistics
-- Skipping selected directories
+- Skipping selected directories (`.git`, `build`)
 
 ## Requirements
 
 - Linux
-- C++20 compiler
+- C++20 compiler with `std::format` support (GCC 13+ or Clang 17+)
 - CMake 3.20 or newer
 
 ## Build
@@ -32,13 +32,27 @@ cmake --build build
 
 ## Usage
 
-Run DiskAch from the project directory:
+```bash
+./build/DiskAch [path]
+```
+
+If no path is given, DiskAch scans the current working directory.
+
+Examples:
 
 ```bash
 ./build/DiskAch
+./build/DiskAch ~/Downloads
+./build/DiskAch /var/log
+./build/DiskAch ..
 ```
 
-By default, DiskAch scans the current working directory.
+To run it from anywhere, copy the binary to a directory in your `PATH`:
+
+```bash
+mkdir -p ~/.local/bin
+cp build/DiskAch ~/.local/bin/
+```
 
 ## Tech Stack
 
