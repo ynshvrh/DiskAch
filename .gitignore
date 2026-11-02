@@ -1,0 +1,135 @@
+build
+
+# ==============================
+# Build directories
+# ==============================
+build/
+build-*/
+cmake-build-*/
+out/
+bin/
+obj/
+
+# ==============================
+# CMake generated files
+# ==============================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+compile_commands.json
+*.cmake.user
+
+# ==============================
+# Compiled binaries and objects
+# ==============================
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.bin
+
+# ==============================
+# Debug and profiling files
+# ==============================
+*.core
+core
+core.*
+*.prof
+*.profraw
+*.gcda
+*.gcno
+*.gcov
+*.dSYM/
+
+# ==============================
+# IDEs and editors
+# ==============================
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# JetBrains
+.idea/
+*.iml
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj*
+*.user
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+
+# ==============================
+# Operating systems
+# ==============================
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+*.log
+
+# ==============================
+# Environment and local configuration
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Package managers
+# ==============================
+.conan/
+vcpkg_installed/
+
+# ==============================
+# Testing artifacts
+# ==============================
+Testing/
+test-results/
+coverage/
+coverage.*
+
+# ==============================
+# Documentation generation
+# ==============================
+docs/_build/
+site/
